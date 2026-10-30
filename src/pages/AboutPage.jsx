@@ -225,7 +225,7 @@ export default function AboutPage() {
           }
 
           .about-bottom-cta {
-            padding: 44px 0 55px 0;
+            padding: 44px 0 95px 0;
           }
 
           .about-cta-card {

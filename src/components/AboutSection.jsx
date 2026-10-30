@@ -494,7 +494,7 @@ export default function AboutSection() {
           width: 100%;
           aspect-ratio: 4 / 3;
           object-fit: cover;
-          object-position: 55% center;
+          object-position: 82% 20%;
           display: block;
           transition: transform 0.4s ease;
         }
@@ -1058,11 +1058,17 @@ export default function AboutSection() {
 
         @media (max-width: 768px) {
           .luxury-about-section {
-            padding: 50px 0 60px 0;
+            padding: 44px 0 70px 0;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
           }
 
           .about-header-block {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
+            width: 100%;
+            max-width: 100%;
           }
 
           .about-pre-heading {
@@ -1071,38 +1077,67 @@ export default function AboutSection() {
           }
 
           .about-main-title {
-            font-size: clamp(1.65rem, 6.8vw, 2.1rem);
+            font-size: clamp(1.6rem, 6.5vw, 2rem);
             line-height: 1.15;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
           }
 
           .about-sub-title {
-            font-size: 0.92rem;
+            font-size: 0.90rem;
             line-height: 1.55;
           }
 
-          /* Owner Bezel on Mobile */
+          /* Owner Bezel on Mobile — Full-width, clean padding, zero overflow */
           .about-grid-main {
-            gap: 28px;
-            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 36px;
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
           }
 
           .owner-card-bezel {
-            padding: 6px;
-            border-radius: 16px;
+            position: static;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
           }
 
           .owner-card-inner {
-            padding: 16px;
-            border-radius: 12px;
+            background: #FFFFFF;
+            border: 1px solid rgba(78, 4, 1, 0.1);
+            border-radius: 16px;
+            padding: 14px 14px 18px 14px;
+            box-shadow: 0 4px 16px rgba(78, 4, 1, 0.05);
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
+            overflow: hidden;
           }
 
           .owner-image-frame {
-            border-radius: 10px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
           }
 
+          /* Perfectly center Symanthan and the Suburban in frame */
           .owner-photo-img {
+            width: 100%;
             aspect-ratio: 16 / 11;
+            object-fit: cover;
+            object-position: 82% 18% !important;
+            display: block;
           }
 
           .owner-status-bar {
@@ -1111,30 +1146,60 @@ export default function AboutSection() {
             bottom: 6px;
             padding: 5px 8px;
             gap: 6px;
+            background: rgba(14, 3, 16, 0.92);
+            box-sizing: border-box;
+            max-width: calc(100% - 12px);
           }
 
           .status-label {
-            font-size: 0.62rem;
-            letter-spacing: 0.04em;
+            font-size: 0.60rem;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
 
           .owner-info-content {
             margin-top: 14px;
             gap: 12px;
+            width: 100%;
+            box-sizing: border-box;
           }
 
           .owner-title-row {
-            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             gap: 8px;
+            flex-wrap: wrap;
+            width: 100%;
+            box-sizing: border-box;
           }
 
           .owner-name-heading {
-            font-size: 1.4rem;
+            font-size: 1.45rem;
+            line-height: 1.1;
+            margin: 0;
+          }
+
+          .owner-role-text {
+            font-size: 0.78rem;
+            margin-top: 2px;
+          }
+
+          .owner-verified-tag {
+            padding: 4px 8px;
+            font-size: 0.62rem;
+            letter-spacing: 0.04em;
+            flex-shrink: 0;
           }
 
           .owner-credentials-grid {
+            display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 6px;
+            width: 100%;
+            box-sizing: border-box;
           }
 
           .owner-credentials-grid .cred-tile:last-child {
@@ -1143,24 +1208,52 @@ export default function AboutSection() {
           }
 
           .cred-tile {
-            padding: 6px 8px;
-            font-size: 0.68rem;
+            padding: 7px 8px;
+            font-size: 0.70rem;
+            min-width: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+          }
+
+          .cred-tile span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
 
           .owner-quote-box {
-            padding: 12px 14px;
+            padding: 10px 12px;
+            box-sizing: border-box;
           }
 
           .quote-text {
             font-size: 0.82rem;
-            line-height: 1.5;
+            line-height: 1.48;
             margin-bottom: 6px;
+          }
+
+          .owner-direct-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 4px;
           }
 
           .btn-owner-whatsapp,
           .btn-owner-call {
-            padding: 10px 14px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 11px 14px;
             font-size: 0.80rem;
+          }
+
+          .about-editorial-panel {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
           }
 
           /* Tab Switcher */

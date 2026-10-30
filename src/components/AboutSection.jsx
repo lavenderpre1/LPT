@@ -1058,30 +1058,120 @@ export default function AboutSection() {
 
         @media (max-width: 768px) {
           .luxury-about-section {
-            padding: 65px 0 75px 0;
+            padding: 50px 0 60px 0;
           }
 
           .about-header-block {
-            margin-bottom: 32px;
+            margin-bottom: 28px;
           }
 
           .about-pre-heading {
-            font-size: 0.72rem;
-            margin-bottom: 8px;
+            font-size: 0.70rem;
+            margin-bottom: 6px;
           }
 
           .about-main-title {
-            font-size: 2rem;
+            font-size: clamp(1.65rem, 6.8vw, 2.1rem);
+            line-height: 1.15;
             margin-bottom: 12px;
           }
 
           .about-sub-title {
-            font-size: 0.94rem;
+            font-size: 0.92rem;
+            line-height: 1.55;
           }
 
+          /* Owner Bezel on Mobile */
+          .about-grid-main {
+            gap: 28px;
+            margin-bottom: 40px;
+          }
+
+          .owner-card-bezel {
+            padding: 6px;
+            border-radius: 16px;
+          }
+
+          .owner-card-inner {
+            padding: 16px;
+            border-radius: 12px;
+          }
+
+          .owner-image-frame {
+            border-radius: 10px;
+          }
+
+          .owner-photo-img {
+            aspect-ratio: 16 / 11;
+          }
+
+          .owner-status-bar {
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            padding: 5px 8px;
+            gap: 6px;
+          }
+
+          .status-label {
+            font-size: 0.62rem;
+            letter-spacing: 0.04em;
+          }
+
+          .owner-info-content {
+            margin-top: 14px;
+            gap: 12px;
+          }
+
+          .owner-title-row {
+            flex-wrap: wrap;
+            gap: 8px;
+          }
+
+          .owner-name-heading {
+            font-size: 1.4rem;
+          }
+
+          .owner-credentials-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+          }
+
+          .owner-credentials-grid .cred-tile:last-child {
+            grid-column: span 2;
+            justify-content: center;
+          }
+
+          .cred-tile {
+            padding: 6px 8px;
+            font-size: 0.68rem;
+          }
+
+          .owner-quote-box {
+            padding: 12px 14px;
+          }
+
+          .quote-text {
+            font-size: 0.82rem;
+            line-height: 1.5;
+            margin-bottom: 6px;
+          }
+
+          .btn-owner-whatsapp,
+          .btn-owner-call {
+            padding: 10px 14px;
+            font-size: 0.80rem;
+          }
+
+          /* Tab Switcher */
           .about-tabs-track {
+            display: flex;
+            gap: 6px;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
+            padding: 4px;
+            margin-bottom: 24px;
           }
 
           .about-tabs-track::-webkit-scrollbar {
@@ -1089,39 +1179,162 @@ export default function AboutSection() {
           }
 
           .about-tab-item {
+            flex: 0 0 auto;
             white-space: nowrap;
-            padding: 10px 14px;
-            font-size: 0.78rem;
+            padding: 9px 13px;
+            font-size: 0.74rem;
+            letter-spacing: 0.04em;
           }
 
+          /* Tab Panes */
+          .pane-lead-title {
+            font-size: 1.25rem;
+            line-height: 1.25;
+            margin-bottom: 12px;
+          }
+
+          .pane-lead-text,
+          .pane-body-text {
+            font-size: 0.90rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+          }
+
+          /* Bento & Quad Grids */
           .story-bento-grid,
           .standards-quad-grid {
             grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+          }
+
+          .story-bento-item,
+          .standard-pillar-card {
+            padding: 16px 14px;
+            border-radius: 12px;
+          }
+
+          .bento-tile-heading,
+          .pillar-heading {
+            font-size: 0.98rem;
+            margin-bottom: 4px;
+          }
+
+          .bento-tile-desc,
+          .pillar-copy {
+            font-size: 0.82rem;
+            line-height: 1.48;
+          }
+
+          .pillar-num-code {
+            width: 32px;
+            height: 32px;
+            font-size: 0.95rem;
+            border-radius: 6px;
+          }
+
+          /* Comparison Table — Beautiful Mobile Card Layout */
+          .comparison-table-wrapper {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 24px;
           }
 
           .comparison-table-head {
-            grid-template-columns: 1fr;
-            gap: 4px;
+            display: none;
           }
 
           .comparison-data-row {
-            grid-template-columns: 1fr;
-            gap: 6px;
+            background: #FFFFFF;
+            border: 1px solid rgba(78, 4, 1, 0.09);
+            border-radius: 12px;
+            padding: 14px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(78, 4, 1, 0.03);
           }
 
+          .col-feature-title {
+            font-size: 0.90rem;
+            color: #4E0401;
+            border-bottom: 1px solid rgba(78, 4, 1, 0.06);
+            padding-bottom: 6px;
+            margin-bottom: 2px;
+            display: block;
+          }
+
+          .col-brand-val {
+            font-size: 0.84rem;
+            color: #4E0401;
+            font-weight: 700;
+            background: #FAF6EE;
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(232, 140, 43, 0.28);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          }
+
+          .col-apps-val {
+            font-size: 0.80rem;
+            color: #786C6A;
+            padding: 4px 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          }
+
+          /* Metrics Deck */
           .about-metrics-deck {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
           }
 
+          .metric-card {
+            padding: 16px 14px;
+            border-radius: 12px;
+          }
+
+          .metric-stat-num {
+            font-size: 1.85rem;
+            margin-bottom: 4px;
+          }
+
+          .metric-stat-title {
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+          }
+
+          .metric-stat-desc {
+            font-size: 0.76rem;
+            line-height: 1.4;
+          }
+
+          /* Editorial Actions */
           .about-editorial-actions {
             flex-direction: column;
             width: 100%;
+            gap: 10px;
           }
 
           .btn-reserve-lead,
           .btn-inspect-fleet {
             width: 100%;
             justify-content: center;
+            padding: 13px 20px;
+            font-size: 0.84rem;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .about-metrics-deck {
+            grid-template-columns: 1fr;
           }
         }
       `}</style>

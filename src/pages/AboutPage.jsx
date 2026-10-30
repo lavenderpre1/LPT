@@ -202,12 +202,14 @@ export default function AboutPage() {
           .about-cta-card {
             flex-direction: column;
             align-items: flex-start;
-            padding: 34px 26px;
+            padding: 30px 22px;
+            gap: 24px;
           }
 
           .about-cta-actions {
             width: 100%;
             flex-direction: column;
+            gap: 10px;
           }
 
           .btn-cta-reserve,
@@ -219,15 +221,38 @@ export default function AboutPage() {
 
         @media (max-width: 768px) {
           .about-breadcrumb-bar {
-            padding: 12px 0;
+            padding: 10px 0;
+          }
+
+          .about-bottom-cta {
+            padding: 44px 0 55px 0;
+          }
+
+          .about-cta-card {
+            padding: 24px 18px;
+            border-radius: 16px;
+          }
+
+          .cta-kicker {
+            font-size: 0.68rem;
+            margin-bottom: 6px;
           }
 
           .cta-title-thick {
-            font-size: 1.5rem;
+            font-size: clamp(1.3rem, 5.5vw, 1.6rem);
+            line-height: 1.2;
+            margin-bottom: 8px;
           }
 
           .cta-description {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
+            line-height: 1.5;
+          }
+
+          .btn-cta-reserve,
+          .btn-cta-whatsapp {
+            padding: 12px 18px;
+            font-size: 0.84rem;
           }
         }
       `}</style>

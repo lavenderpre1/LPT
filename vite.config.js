@@ -18,8 +18,9 @@ function spaStaticRoutesPlugin(routes = ['about']) {
       if (!fs.existsSync(indexHtmlPath)) return;
       const indexHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
 
-      // 1. Create a 404.html copy in dist
+      // 1. Create 404.html and 200.html copies in dist (Cloudflare Pages & static SPA fallback)
       fs.writeFileSync(path.join(distDir, '404.html'), indexHtml, 'utf-8');
+      fs.writeFileSync(path.join(distDir, '200.html'), indexHtml, 'utf-8');
 
       // 2. Create physical directory and index.html for each SPA route
       for (const route of routes) {
@@ -29,7 +30,7 @@ function spaStaticRoutesPlugin(routes = ['about']) {
         }
         fs.writeFileSync(path.join(routeDir, 'index.html'), indexHtml, 'utf-8');
       }
-      console.log('✓ Generated static route fallbacks for: ' + routes.join(', ') + ' and 404.html');
+      console.log('✓ Generated static route fallbacks for: ' + routes.join(', ') + ', 200.html, and 404.html');
     },
   };
 }
